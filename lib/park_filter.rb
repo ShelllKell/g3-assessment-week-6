@@ -17,12 +17,9 @@ class ParkFilter
 
   def indexing_by_country
 
-    keys = @parks.map {|park_hash| park_hash[:country]}
+    keys = @parks.group_by {|park_hash| park_hash[:country]}
 
-    zipped = keys.zip(@parks)
-    Hash[zipped].sort_by {|key, value| key}.to_h
 
-  #need to find second united states and put hashes in array
   end
 
 end
